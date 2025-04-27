@@ -41,7 +41,7 @@ export default function AboutPage() {
                 transition={{ delay: 0.2, duration: 1 }}
                 className="max-w-3xl text-center text-gray-400 text-base sm:text-lg mb-12"
             >
-                Je suis Mathéo Picouleau, étudiant en informatique et passionné par le développement web. J'ai acquis des compétences solides dans le développement d'applications web et mobiles, ainsi que dans la création de sites web modernes et réactifs. Je suis toujours à la recherche de nouveaux défis et d'opportunités pour apprendre et grandir en tant que développeur.
+                Je suis Mathéo Picouleau, étudiant en informatique et passionné par le développement web. J&#39;ai acquis des compétences solides dans le développement d&#39;applications web et mobiles, ainsi que dans la création de sites web modernes et réactifs. Je suis toujours à la recherche de nouveaux défis et d&#39;opportunités pour apprendre et grandir en tant que développeur.
             </motion.p>
 
             <motion.div

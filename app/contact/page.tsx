@@ -20,7 +20,7 @@ export default function ContactPage() {
                 transition={{ delay: 0.2, duration: 1 }}
                 className="max-w-2xl text-center text-gray-400 text-base sm:text-lg mb-8"
             >
-                Si vous souhaitez me contacter, n'hésitez pas à m'envoyer un e-mail à l'adresse suivante :
+                Si vous souhaitez me contacter, n&#39;hésitez pas à m&#39;envoyer un e-mail à l&#39;adresse suivante :
             </motion.p>
 
             <motion.a
