@@ -1,27 +1,7 @@
 'use client';
 
 import { motion } from "motion/react";
-
-const skills = [
-    "Next.js",
-    "React",
-    "React Native",
-    "Tailwind CSS",
-    "TypeScript",
-    "Node.js",
-    "Express",
-    "NestJS",
-    "Prisma",
-    "Framer Motion",
-    "API REST",
-    "PHP",
-    "Laravel",
-    "C",
-    "Java",
-    "C#",
-    "Python",
-    "SQL"
-];
+import { skills } from "@/app/data";
 
 export default function AboutPage() {
     return (
