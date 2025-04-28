@@ -3,6 +3,14 @@ import { ReactNode } from "react";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 
+export const metadata = {
+    title: "Portfolio | Mathéo Picouleau",
+    description: "Portfolio de Mathéo Picouleau, étudiant en informatique",
+    icons: {
+        icon: "/icon.svg"
+    }
+}
+
 export default function RootLayout({ children }: { children: ReactNode }) {
     return (
         <html lang="fr">
