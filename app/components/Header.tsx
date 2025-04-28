@@ -17,7 +17,7 @@ export default function Header() {
 
     return (
         <header className="w-full px-6 py-4 flex justify-between items-center relative z-50">
-            <Link href="/public" className="text-2xl font-bold">
+            <Link href="/" className="text-2xl font-bold">
                 Mathéo
             </Link>
 
