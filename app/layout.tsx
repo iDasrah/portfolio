@@ -7,7 +7,9 @@ export const metadata = {
     title: "Portfolio | Mathéo Picouleau",
     description: "Portfolio de Mathéo Picouleau, étudiant en informatique",
     icons: {
-        icon: "/icon.svg"
+        icon: "/icon.svg",
+        shortcut: "/icon.svg",
+        apple: "/icon.svg",
     }
 }
 
