@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Project from "../components/Project.tsx";
 import LeftDecoration from "../components/LeftDecoration.tsx";
+import Navbar from "../components/Navbar.tsx";
 import { getCollection } from "astro:content";
 
 const projects = await getCollection("projects");
@@ -20,14 +21,7 @@ const pageTitle = "Projets";
                 ))}
             </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="/">Accueil</a></li>
-                <li><a href="/projects" id="currentLink">Projets</a></li>
-                <li><a href="/about">À propos</a></li>
-                <li><a href="/contact">Contact</a></li>
-            </ul>
-        </nav>
+        <Navbar client:load/>
     </div>
 </BaseLayout>
 
@@ -51,32 +45,5 @@ const pageTitle = "Projets";
     h1 {
         font-size: 4rem;
         margin-bottom: 2rem;
-    }
-
-    nav {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        background-color: #121214;
-        padding: 1rem;
-    }
-
-    nav ul {
-        list-style: none;
-        display: flex;
-        gap: 1rem;
-    }
-
-    nav a {
-        color: #888888;
-        user-select: none;
-        text-decoration: none;
-        font-weight: 200;
-        font-size: .9rem;
-        transition: 0.2s;
-    }
-
-    nav a:hover {
-        color: #e3e3e3;
     }
 </style>
