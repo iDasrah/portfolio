@@ -54,6 +54,13 @@ body {
     cursor: pointer;
 }
 
+.left-container {
+    width: 20%;
+    height: 95vh;
+    background-color: #f0f0f0;
+    border-radius: 0 0 16rem 16rem;
+}
+
 .projectsList {
     display: flex;
     flex-direction: row;
@@ -94,4 +101,9 @@ body {
 
 .project a:visited {
     color: white;
+}
+
+#currentLink {
+    color: white;
+    font-weight: 400
 }
