@@ -1,8 +1,84 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import LeftDecoration from "../components/LeftDecoration.tsx";
+import Navbar from "../components/Navbar.tsx";
+
+const skills = {
+    languages: ["C", "C++", "Java", "C#", "Python", "TypeScript", "PHP", "HTML", "CSS", "SQL", "Lua"],
+    tech: ["React", "Express", "NestJS", "Prisma", "Laravel", "TailwindCSS", "NextJS", "React Native", "Expo"]
+}
 
 const pageTitle = "À propos de moi"
 ---
 <BaseLayout pageTitle={pageTitle}>
-
+    <LeftDecoration />
+    <div class="content">
+        <div>
+            <h1>À propos de moi</h1>
+            <p>
+                Je suis Mathéo, étudiant en informatique.<br />
+                Passionné par la programmation depuis mes 11 ans, je suis toujours prêt à apprendre de nouvelles choses.<br />
+                Bien que la développement web soit mon domaine préféré, je trouve de l'intérêt dans de nombreux autres domaines
+                comme la programmation graphique (OpenGL) mais aussi la création de jeux vidéo ainsi que d'applications mobiles.
+            </p>
+        </div>
+        <div>
+            <h2>Technologies maîtrisées</h2>
+            <div class="skillsList">
+                <div>
+                    <h4>Langages</h4>
+                    { skills.languages.join(', ') }
+                </div>
+                <div>
+                    <h4>Technologies</h4>
+                    { skills.tech.join(', ') }
+                </div>
+            </div>
+        </div>
+        <Navbar client:load />
+    </div>
 </BaseLayout>
+
+<style>
+    body {
+        display: flex;
+        margin: 0;
+        padding: 0;
+
+    }
+
+    .content {
+        flex: 1;
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .skillsList {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .skillsList div {
+        display: flex;
+        gap: 1rem;
+    }
+
+    h1 {
+        font-size: 4rem;
+        margin-bottom: 2rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        line-height: 1.5;
+        width: 60%;
+    }
+</style>
