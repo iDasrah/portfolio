@@ -1,0 +1,85 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Project from "../components/Project.tsx";
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects");
+
+const pageTitle = "Projets";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <div class="left-container"></div>
+    <div class="content">
+        <div>
+            <h1>Projets</h1>
+            <div class="projectsList">
+                {projects.map((project: any) => (
+                        <Project name={project.data.title} description={project.data.description} url={project.data.link} />
+                ))}
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/projects">Projets</a></li>
+                <li><a href="/about">À propos</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</BaseLayout>
+
+<style>
+    body {
+        display: flex;
+        margin: 0;
+        padding: 0;
+
+    }
+
+    .left-container {
+        width: 20%;
+        height: 95vh;
+        background-color: #f0f0f0;
+        border-radius: 0 0 16rem 16rem;
+    }
+
+    .content {
+        flex: 1;
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    h1 {
+        font-size: 4rem;
+        margin-bottom: 2rem;
+    }
+
+    nav {
+        position: absolute;
+        bottom: 2rem;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+    }
+
+    nav a {
+        color: #888888;
+        user-select: none;
+        text-decoration: none;
+        font-weight: 200;
+        font-size: .9rem;
+        transition: 0.2s;
+    }
+
+    nav a:hover {
+        color: white;
+    }
+</style>

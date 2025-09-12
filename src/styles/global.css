@@ -13,7 +13,7 @@ body {
     color: white;
 }
 
-nav a {
+.navbar-home a {
     color: black;
     text-decoration: none;
     background-color: white;
@@ -24,25 +24,25 @@ nav a {
     transition: 0.2s;
 }
 
-nav a:hover {
+.navbar-home a:hover {
     background-color: #e0e0e0;
 }
 
-nav {
+.navbar-home {
     display: flex;
     align-items: center;
     gap: 1rem;
     justify-content: space-between;
 }
 
-nav ul {
+.navbar-home ul {
     list-style: none;
     display: flex;
     gap: 1rem;
     align-items: center;
 }
 
-nav .menu {
+.navbar-home .menu {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -52,4 +52,46 @@ nav .menu {
     width: 2rem;
     height: 2rem;
     cursor: pointer;
+}
+
+.projectsList {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.project {
+    background-color: #272728;
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 30%;
+    min-height: 15rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.project h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.project p {
+    font-size: .8rem;
+}
+
+.project a {
+    text-decoration: none;
+    color: white;
+
+}
+
+.project a:hover {
+    text-decoration: underline;
+}
+
+.project a:visited {
+    color: white;
 }

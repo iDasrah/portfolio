@@ -1,7 +1,7 @@
 import React from 'react'
 import {Menu, X} from "lucide-react";
 
-const Navbar = () => {
+const NavbarHome = () => {
     const [isOpen, setIsOpen] = React.useState(false);
 
     const handleClickMenu = () => {
@@ -9,8 +9,8 @@ const Navbar = () => {
     }
 
     return (
-        <nav>
-            <a href="">Voir mes projets</a>
+        <nav className="navbar-home">
+            <a href="/projects">Voir mes projets</a>
             {
                 isOpen ? (
                     <div className="menu">
@@ -25,4 +25,4 @@ const Navbar = () => {
         </nav>
     )
 }
-export default Navbar
+export default NavbarHome
