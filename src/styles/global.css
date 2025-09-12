@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 3rem;
+    background-color: #121214;
+    font-family: "Spline Sans Mono", monospace;
+    color: white;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    background-color: #e0e0e0;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+nav .menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.menuIcon {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+}
