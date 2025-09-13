@@ -4,7 +4,15 @@ const Navbar = () => {
     const [pathname, setPathname] = useState("");
 
     useEffect(() => {
-        setPathname(window.location.pathname);
+        const updatePath = () => setPathname(window.location.pathname);
+
+        updatePath();
+
+        document.addEventListener('swup:contentReplaced', updatePath);
+
+        return () => {
+            document.removeEventListener('swup:contentReplaced', updatePath);
+        };
     }, []);
 
     const links = [
