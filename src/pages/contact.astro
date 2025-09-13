@@ -1,0 +1,61 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import LeftDecoration from "../components/LeftDecoration.tsx";
+import Navbar from "../components/Navbar.tsx";
+
+const pageTitle = "Contact";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <LeftDecoration />
+    <div class="content">
+        <div>
+            <h1>Me contacter</h1>
+            <p>On pourrait peut-être travailler ensemble. Contactez-moi !</p>
+            <a href="mailto:matheo.picouleau@hotmail.com">matheo.picouleau@hotmail.com</a>
+            <div>
+                <a href="https://www.linkedin.com/in/mathéo-picouleau-767812250">Linkedin</a>
+            </div>
+        </div>
+        <Navbar client:load />
+    </div>
+</BaseLayout>
+
+
+<style>
+    body {
+        display: flex;
+        margin: 0;
+        padding: 0;
+
+    }
+
+    .content {
+        flex: 1;
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .content div {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    a {
+        text-decoration: none;
+        color: #888888;
+    }
+
+    a:hover {
+        text-decoration: underline;
+        color: white;
+    }
+</style>

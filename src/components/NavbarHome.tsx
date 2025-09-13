@@ -16,7 +16,7 @@ const NavbarHome = () => {
                     <div className="menu">
                         <ul>
                             <li><a href="/about">À propos</a></li>
-                            <li><a>Contact</a></li>
+                            <li><a href="/contact">Contact</a></li>
                         </ul>
                         <X className="menuIcon" onClick={handleClickMenu} />
                     </div>
