@@ -3,12 +3,13 @@ import LeftDecoration from "../components/LeftDecoration.tsx";
 import Navbar from "../components/Navbar.tsx";
 
 const { contentStyles } = Astro.props;
+const currentPath = Astro.url.pathname;
 ---
 
 <div class="wrapper">
     <LeftDecoration client:load />
     <div class="content" style={contentStyles}>
         <slot />
-        <Navbar client:load />
+        <Navbar client:load currentPath={currentPath} />
     </div>
 </div>
