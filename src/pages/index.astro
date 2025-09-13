@@ -1,17 +1,23 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import NavbarHome from "../components/NavbarHome.tsx";
+import MeshBackground from "../components/MeshBackground.tsx";
 ---
 <BaseLayout pageTile="Mathéo Picouleau - Portfolio">
-    <h1>
-        Mathéo<br />Picouleau
-    </h1>
-    <div>
-        <div class="available">
-            <div id="pulse-circle"></div>
-            <p>Recherche un stage</p>
+    <div class="background">
+        <MeshBackground colors={["#212121", "#000"]} distortion={1} swirl={1} offsetX={0} offsetY={0} scale={2} rotation={0} speed={1.5} client:load />
+    </div>
+    <div class="content">
+        <h1>
+            Mathéo<br />Picouleau
+        </h1>
+        <div>
+            <div class="available">
+                <div id="pulse-circle"></div>
+                <p>Recherche un stage</p>
+            </div>
+            <NavbarHome client:load />
         </div>
-        <NavbarHome client:load />
     </div>
 </BaseLayout>
 
@@ -21,6 +27,15 @@ import NavbarHome from "../components/NavbarHome.tsx";
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+    }
+
+    .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
     }
 
     h1 {
