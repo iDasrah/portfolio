@@ -3,6 +3,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import LeftDecoration from "../components/LeftDecoration.tsx";
 import Navbar from "../components/Navbar.tsx";
 
+const contactLinks = [
+    {
+        title: "Linkedin",
+        url: "https://www.linkedin.com/in/mathéo-picouleau-767812250"
+    },
+    {
+        title: "GitHub",
+        url: "https://github.com/idasrah"
+    }
+]
+
 const pageTitle = "Contact";
 ---
 
@@ -12,9 +23,13 @@ const pageTitle = "Contact";
         <div>
             <h1>Me contacter</h1>
             <p>On pourrait peut-être travailler ensemble. Contactez-moi !</p>
-            <a href="mailto:matheo.picouleau@hotmail.com">matheo.picouleau@hotmail.com</a>
-            <div>
-                <a href="https://www.linkedin.com/in/mathéo-picouleau-767812250">Linkedin</a>
+            <a class="mail" href="mailto:matheo.picouleau@hotmail.com">matheo.picouleau@hotmail.com</a>
+            <div class="contactLinks">
+                {
+                    contactLinks.map((link) => (
+                        <a href={link.url}>{link.title}</a>
+                    ))
+                }
             </div>
         </div>
         <Navbar client:load />
@@ -39,7 +54,7 @@ const pageTitle = "Contact";
         gap: 2rem;
     }
 
-    .content div {
+    .content > div {
         display: flex;
         flex-direction: column;
         gap: 2rem;
@@ -51,11 +66,31 @@ const pageTitle = "Contact";
 
     a {
         text-decoration: none;
-        color: #888888;
+        color: #ababab;
+        width: fit-content;
     }
 
-    a:hover {
+    .mail:hover {
         text-decoration: underline;
+        color: white;
+    }
+
+    .contactLinks {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .contactLinks a {
+        background-color: #272728;
+        padding: 1rem;
+        border-radius: 1rem;
+        transition: 0.2s;
+    }
+
+    .contactLinks a:hover {
+        background-color: #373738;
         color: white;
     }
 </style>
