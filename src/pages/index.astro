@@ -2,8 +2,10 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import NavbarHome from "../components/NavbarHome.tsx";
 import MeshBackground from "../components/MeshBackground.tsx";
+
+const pageTitle = "Portfolio";
 ---
-<BaseLayout pageTile="Mathéo Picouleau - Portfolio">
+<BaseLayout pageTitle={pageTitle}>
     <div class="background">
         <MeshBackground colors={["#212121", "#000"]} distortion={1} swirl={1} offsetX={0} offsetY={0} scale={2} rotation={0} speed={1.5} client:load />
     </div>
