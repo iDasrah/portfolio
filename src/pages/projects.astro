@@ -16,8 +16,8 @@ const pageTitle = "Projets";
         <div>
             <h1>Projets</h1>
             <div class="projectsList">
-                {projects.map((project: any) => (
-                        <Project name={project.data.title} description={project.data.description} url={project.data.link} />
+                {projects.filter(project => !project.data.disabled).map(project => (
+                    <Project name={project.data.title} description={project.data.description} url={project.data.link} />
                 ))}
             </div>
         </div>
