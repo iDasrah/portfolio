@@ -8,7 +8,8 @@
 
 body {
     padding: 3rem;
-    background-color: #121214;
+    background: #121214;
+    background: linear-gradient(90deg, rgba(18, 18, 20, 1) 0%, rgba(30, 30, 31, 1) 100%);
     font-family: "Spline Sans Mono", monospace;
     color: white;
 }
@@ -57,7 +58,8 @@ body {
 .left-container {
     width: 20%;
     height: 95vh;
-    background-color: #f0f0f0;
+    background: #ffffff;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgb(194, 193, 193) 100%);
     border-radius: 0 0 16rem 16rem;
 }
 
@@ -112,7 +114,6 @@ body {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: #121214;
     padding: 1rem;
 }
 
