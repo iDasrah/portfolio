@@ -1,0 +1,14 @@
+---
+import LeftDecoration from "../components/LeftDecoration.tsx";
+import Navbar from "../components/Navbar.tsx";
+
+const { contentStyles } = Astro.props;
+---
+
+<div class="wrapper">
+    <LeftDecoration client:load />
+    <div class="content" style={contentStyles}>
+        <slot />
+        <Navbar client:load />
+    </div>
+</div>

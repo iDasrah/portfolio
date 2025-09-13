@@ -9,6 +9,14 @@
 body {
     font-family: "Spline Sans Mono", monospace;
     color: white;
+    min-height: 100vh;
+    background: #121214;
+}
+
+.wrapper {
+    display: flex;
+    margin: 0;
+    padding: 0;
 }
 
 .content {
@@ -138,4 +146,13 @@ body {
 
 .navbar a:hover {
     color: #e3e3e3;
+}
+
+html.is-changing .transition-fade {
+    opacity: 1;
+    transition: .4s;
+}
+
+html.is-animating .transition-fade {
+    opacity: 0;
 }

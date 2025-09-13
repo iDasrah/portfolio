@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import LeftDecoration from "../components/LeftDecoration.tsx";
-import Navbar from "../components/Navbar.tsx";
+import PortfolioLayout from "../layouts/PortfolioLayout.astro";
 
 const skills = {
     languages: ["C", "C++", "Java", "C#", "Python", "TypeScript", "PHP", "HTML", "CSS", "SQL", "Lua"],
@@ -11,8 +10,7 @@ const skills = {
 const pageTitle = "À propos de moi"
 ---
 <BaseLayout pageTitle={pageTitle}>
-    <LeftDecoration client:load />
-    <div class="content">
+    <PortfolioLayout contentStyles={{justifyContent: "flex-start"}}>
         <div>
             <h1>À propos de moi</h1>
             <p>
@@ -35,18 +33,10 @@ const pageTitle = "À propos de moi"
                 </div>
             </div>
         </div>
-        <Navbar client:load />
-    </div>
+    </PortfolioLayout>
 </BaseLayout>
 
 <style>
-    body {
-        display: flex;
-        margin: 0;
-        padding: 0;
-        background: #121214;
-    }
-
     .content {
         justify-content: flex-start;
     }

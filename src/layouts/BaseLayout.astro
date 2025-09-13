@@ -13,6 +13,8 @@ const { pageTitle } = Astro.props;
     <title>Mathéo Picouleau | {pageTitle}</title>
 </head>
 <body>
-<slot />
+<main class="transition-fade">
+    <slot />
+</main>
 </body>
 </html>
