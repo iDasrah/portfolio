@@ -14,7 +14,7 @@ const Navbar = ({ currentPath } : { currentPath: string }) => {
             <ul>
                 {links.map((link) => (
                     <li key={link.href}>
-                        <a href={link.href} id={currentPath === link.href ? "currentLink" : ""}>{link.text}</a>
+                        <a href={link.href} className={currentPath === link.href ? "currentLink" : ""}>{link.text}</a>
                     </li>
                 ))}
             </ul>
