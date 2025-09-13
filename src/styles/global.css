@@ -92,7 +92,7 @@ body {
 .project a {
     text-decoration: none;
     color: white;
-
+    width: fit-content;
 }
 
 .project a:hover {
