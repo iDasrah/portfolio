@@ -8,7 +8,7 @@ const pageTitle = "Portfolio";
 <BaseLayout pageTitle={pageTitle}>
     <div class="wrapper">
         <div class="background">
-            <MeshBackground colors={["#212121", "#000"]} distortion={1} swirl={1} offsetX={0} offsetY={0} scale={2} rotation={0} speed={1.5} client:load />
+            <MeshBackground colors={["#3d2727", "#000"]} distortion={1} swirl={1} offsetX={0} offsetY={0} scale={2} rotation={0} speed={1.5} client:load />
         </div>
         <div class="content">
             <div class="top-section">
@@ -20,7 +20,6 @@ const pageTitle = "Portfolio";
                     <p>Recherche un stage</p>
                 </div>
             </div>
-
             <NavbarHome client:load />
         </div>
     </div>
@@ -28,7 +27,6 @@ const pageTitle = "Portfolio";
 
 <style>
     .wrapper {
-        height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -55,7 +53,6 @@ const pageTitle = "Portfolio";
         display: flex;
         align-items: center;
         gap: 1rem;
-        margin-bottom: 1rem;
     }
 
     .available p {
