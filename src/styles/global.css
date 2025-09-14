@@ -88,12 +88,18 @@ main {
     flex-wrap: wrap;
 }
 
+.project .bottom {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
 .project {
     background-color: #272728;
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 1rem;
-    width: 30%;
     min-height: 15rem;
+    width: 30%;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -122,6 +128,20 @@ main {
 
 .project a:visited {
     color: white;
+}
+
+.project .techList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+
+.project .techItem {
+    font-size: .8rem;
+    background-color: #3a3a3c;
+    padding: .3rem .6rem;
+    border-radius: 1rem;
+    color: #888888;
 }
 
 .navbar .currentLink {
