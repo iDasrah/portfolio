@@ -18,7 +18,7 @@ const Project = ({ projectData } : { projectData: ProjectData }) => {
                 <a href={projectData.link} target="_blank">Voir le projet</a>
                 <div className="techList">
                     {projectData.tech.map((item) => (
-                        <span className="techItem">{item}</span>
+                        <span key={item} className="techItem">{item}</span>
                     ))}
                 </div>
             </div>
