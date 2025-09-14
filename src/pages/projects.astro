@@ -13,7 +13,7 @@ const pageTitle = "Projets";
     <PortfolioLayout>
         <div class="projectsList">
             {projects.filter(project => !project.data.disabled).map(project => (
-                    <Project name={project.data.title} description={project.data.description} url={project.data.link} />
+                    <Project projectData={project.data} />
             ))}
         </div>
     </PortfolioLayout>
