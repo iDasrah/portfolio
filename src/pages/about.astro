@@ -10,16 +10,13 @@ const skills = {
 const pageTitle = "À propos de moi"
 ---
 <BaseLayout pageTitle={pageTitle}>
-    <PortfolioLayout contentStyles={{justifyContent: "flex-start"}}>
-        <div>
-            <h1>À propos de moi</h1>
-            <p>
-                Je suis Mathéo, étudiant en informatique.<br />
-                Passionné par la programmation depuis mes 11 ans, je suis toujours prêt à apprendre de nouvelles choses.<br />
-                Bien que le développement web soit mon domaine préféré, je trouve de l'intérêt dans de nombreux autres domaines
-                comme la programmation graphique (OpenGL) mais aussi la création de jeux vidéo ainsi que d'applications mobiles.
-            </p>
-        </div>
+    <PortfolioLayout pageTitle={pageTitle} contentStyles={{justifyContent: "flex-start"}}>
+        <p>
+            Je suis Mathéo, étudiant en informatique.<br />
+            Passionné par la programmation depuis mes 11 ans, je suis toujours prêt à apprendre de nouvelles choses.<br />
+            Bien que le développement web soit mon domaine préféré, je trouve de l'intérêt dans de nombreux autres domaines
+            comme la programmation graphique (OpenGL) mais aussi la création de jeux vidéo ainsi que d'applications mobiles.
+        </p>
         <div>
             <h2>Technologies maîtrisées</h2>
             <div class="skillsList">
@@ -37,10 +34,6 @@ const pageTitle = "À propos de moi"
 </BaseLayout>
 
 <style>
-    .content {
-        justify-content: flex-start;
-    }
-
     .skillsList {
         display: flex;
         flex-direction: column;
@@ -52,11 +45,6 @@ const pageTitle = "À propos de moi"
         gap: 1rem;
     }
 
-    h1 {
-        font-size: 4rem;
-        margin-bottom: 2rem;
-    }
-
     h2 {
         font-size: 2rem;
         margin-bottom: 1rem;
@@ -65,5 +53,21 @@ const pageTitle = "À propos de moi"
     p {
         line-height: 1.5;
         width: 60%;
+    }
+
+    @media screen and (max-device-width: 480px) {
+        p {
+            width: 100%;
+        }
+
+        .skillsList {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .skillsList div {
+            flex-direction: column;
+            gap: .5rem;
+        }
     }
 </style>
