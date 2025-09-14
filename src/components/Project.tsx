@@ -13,7 +13,7 @@ const Project = ({ name, description, url } : ProjectProps) => {
                 <h2>{name}</h2>
                 <p>{description}</p>
             </div>
-            <a href={url}>Voir le projet</a>
+            <a href={url} target="_blank">Voir le projet</a>
         </div>
     )
 }

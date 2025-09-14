@@ -10,7 +10,7 @@ const skills = {
 const pageTitle = "À propos de moi"
 ---
 <BaseLayout pageTitle={pageTitle}>
-    <PortfolioLayout pageTitle={pageTitle} contentStyles={{justifyContent: "flex-start"}}>
+    <PortfolioLayout contentStyles={{justifyContent: "flex-start"}}>
         <p>
             Je suis Mathéo, étudiant en informatique.<br />
             Passionné par la programmation depuis mes 11 ans, je suis toujours prêt à apprendre de nouvelles choses.<br />
@@ -45,19 +45,22 @@ const pageTitle = "À propos de moi"
         gap: 1rem;
     }
 
-    h2 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-    }
-
     p {
         line-height: 1.5;
         width: 60%;
     }
 
+    h2 {
+        margin-bottom: 1.5rem;
+    }
+
     @media screen and (max-device-width: 480px) {
         p {
             width: 100%;
+        }
+
+        h2 {
+            margin-bottom: 1.5rem;
         }
 
         .skillsList {

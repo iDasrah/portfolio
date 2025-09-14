@@ -10,7 +10,7 @@ const pageTitle = "Projets";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <PortfolioLayout pageTitle={pageTitle}>
+    <PortfolioLayout>
         <div class="projectsList">
             {projects.filter(project => !project.data.disabled).map(project => (
                     <Project name={project.data.title} description={project.data.description} url={project.data.link} />
@@ -18,3 +18,10 @@ const pageTitle = "Projets";
         </div>
     </PortfolioLayout>
 </BaseLayout>
+
+<style>
+    body {
+        width: fit-content;
+        height: fit-content;
+    }
+</style>
