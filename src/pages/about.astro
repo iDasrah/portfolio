@@ -54,7 +54,7 @@ const pageTitle = "À propos de moi"
         margin-bottom: 1.5rem;
     }
 
-    @media screen and (max-device-width: 480px) {
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
         p {
             width: 100%;
         }
@@ -71,6 +71,12 @@ const pageTitle = "À propos de moi"
         .skillsList div {
             flex-direction: column;
             gap: .5rem;
+        }
+    }
+
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+        p {
+            width: 100%;
         }
     }
 </style>
