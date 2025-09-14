@@ -4,7 +4,9 @@ import Project from "../components/Project.tsx";
 import { getCollection } from "astro:content";
 import PortfolioLayout from "../layouts/PortfolioLayout.astro";
 
-const projects = await getCollection("projects");
+let projects = await getCollection("projects");
+projects.filter(project => !project.data.disabled);
+projects.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 
 const pageTitle = "Projets";
 ---
@@ -12,7 +14,7 @@ const pageTitle = "Projets";
 <BaseLayout pageTitle={pageTitle}>
     <PortfolioLayout>
         <div class="projectsList">
-            {projects.filter(project => !project.data.disabled).map(project => (
+            {projects.map(project => (
                     <Project projectData={project.data} />
             ))}
         </div>
