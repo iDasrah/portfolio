@@ -17,9 +17,8 @@ const pageTitle = "Contact";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <PortfolioLayout>
+    <PortfolioLayout pageTitle={pageTitle} contentStyles={{justifyContent: "flex-start"}}>
         <div class="contact">
-            <h1>Me contacter</h1>
             <p>On pourrait peut-être travailler ensemble. Contactez-moi !</p>
             <a class="mail" href="mailto:matheo.picouleau@hotmail.com">matheo.picouleau@hotmail.com</a>
             <div class="contactLinks">
@@ -39,10 +38,6 @@ const pageTitle = "Contact";
         display: flex;
         flex-direction: column;
         gap: 2rem;
-    }
-
-    h1 {
-        font-size: 4rem;
     }
 
     a {

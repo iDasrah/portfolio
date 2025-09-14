@@ -126,6 +126,9 @@ body {
     position: fixed;
     bottom: 0;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 1rem;
 }
 
@@ -155,4 +158,42 @@ html.is-changing .transition-fade {
 
 html.is-animating .transition-fade {
     opacity: 0;
+}
+
+@media screen and (max-device-width: 480px) {
+    .left-container {
+        display: none;
+    }
+
+    .content {
+        padding: 1.5rem;
+    }
+
+    .bottom-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar-home {
+        justify-content: center;
+    }
+
+    .navbar-home .menuIcon {
+        display: none;
+    }
+
+    .project {
+        width: 100%;
+    }
+
+    .project h2 {
+        font-size: 1.5rem;
+    }
+
+    .navbar {
+        background: #1c1c1e;
+        border-radius: 4rem 4rem 0 0;
+    }
 }

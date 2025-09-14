@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Project from "../components/Project.tsx";
-import Navbar from "../components/Navbar.tsx";
 import { getCollection } from "astro:content";
 import PortfolioLayout from "../layouts/PortfolioLayout.astro";
 
@@ -11,22 +10,11 @@ const pageTitle = "Projets";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <PortfolioLayout>
-        <div>
-            <h1>Projets</h1>
-            <div class="projectsList">
-                {projects.filter(project => !project.data.disabled).map(project => (
-                        <Project name={project.data.title} description={project.data.description} url={project.data.link} />
-                ))}
-            </div>
-            <Navbar client:load />
+    <PortfolioLayout pageTitle={pageTitle}>
+        <div class="projectsList">
+            {projects.filter(project => !project.data.disabled).map(project => (
+                    <Project name={project.data.title} description={project.data.description} url={project.data.link} />
+            ))}
         </div>
     </PortfolioLayout>
 </BaseLayout>
-
-<style>
-    h1 {
-        font-size: 4rem;
-        margin-bottom: 2rem;
-    }
-</style>
