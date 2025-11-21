@@ -3,8 +3,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import PortfolioLayout from "../layouts/PortfolioLayout.astro";
 
 const skills = {
-    languages: ["C", "Java", "Python", "TypeScript", "C#", "HTML", "CSS", "PHP", "SQL"],
-    tech: ["React", "Express", "TanStack Router", "NestJS", "Expo", "TailwindCSS", "Prisma"],
+    languages: ["TypeScript", "C", "Java", "Python", "C#", "HTML", "CSS", "PHP", "SQL"],
+    tech: ["React", "React Native", "TanStack Router", "NestJS", "Expo", "TailwindCSS", "Prisma"],
 }
 
 const pageTitle = "À propos de moi"
@@ -12,13 +12,13 @@ const pageTitle = "À propos de moi"
 <BaseLayout pageTitle={pageTitle}>
     <PortfolioLayout contentStyles={{justifyContent: "flex-start"}}>
         <p>
-            Je suis Mathéo, étudiant en informatique.<br />
-            Passionné par la programmation depuis mes 11 ans, je suis toujours prêt à apprendre de nouvelles choses.<br />
-            Bien que le développement web soit mon domaine préféré, je trouve de l'intérêt dans de nombreux autres domaines
-            comme la programmation graphique (OpenGL) mais aussi la création de jeux vidéo ainsi que d'applications mobiles.
+            Je suis Mathéo, développeur web full-stack et étudiant en informatique à Strasbourg.<br />
+            Depuis mes 11 ans, la programmation est ma passion. J'aime transformer des idées en applications concrètes et résoudre des problèmes techniques complexes.<br />
+            Spécialisé en développement web moderne avec React et TypeScript, je m'intéresse également à la programmation graphique, au développement mobile et à la création de jeux vidéo.<br />
+            Actuellement disponible pour des missions freelance.
         </p>
         <div>
-            <h2>Technologies maîtrisées</h2>
+            <h2>Compétences techniques</h2>
             <div class="skillsList">
                 <div>
                     <h4>Langages</h4>
@@ -47,7 +47,7 @@ const pageTitle = "À propos de moi"
 
     p {
         line-height: 1.5;
-        width: 60%;
+        width: 70%;
     }
 
     h2 {
