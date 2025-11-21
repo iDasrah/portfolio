@@ -3,15 +3,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import NavbarHome from "../components/NavbarHome.tsx";
 import MeshBackground from "../components/MeshBackground.tsx";
 
-const pageTitle = "Portfolio";
+const pageTitle = "Accueil";
+const description = "Mathéo Picouleau - Développeur web full-stack freelance à Strasbourg. Spécialisé en React, TypeScript, Node.js et développement d'applications web modernes.";
+const keywords = "mathéo picouleau, développeur web strasbourg, freelance react, développeur typescript, full-stack developer, création site web";
 ---
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} description={description} keywords={keywords}>
     <div class="wrapper">
         <div class="background">
             <MeshBackground colors={["#3d2727", "#000"]} distortion={1} swirl={1} offsetX={0} offsetY={0} scale={2} rotation={0} speed={1.5} client:load />
         </div>
         <div class="content">
-            <div class="top-section">
+            <header class="top-section">
                 <h1>
                     Mathéo<br />Picouleau.
                 </h1>
@@ -19,7 +21,7 @@ const pageTitle = "Portfolio";
                     <div id="pulse-circle"></div>
                     <p>Disponible en freelance</p>
                 </div>
-            </div>
+            </header>
             <NavbarHome client:load />
         </div>
     </div>

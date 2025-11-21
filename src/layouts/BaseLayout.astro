@@ -1,16 +1,109 @@
 ---
 import "../styles/global.css";
 
-const { pageTitle } = Astro.props;
+const {
+    pageTitle,
+    description = "Développeur web full-stack freelance à Strasbourg. Création de sites web et applications modernes avec React, TypeScript et Node.js.",
+    keywords = "développeur web, freelance, Strasbourg, React, TypeScript, Node.js, site web, application web",
+    ogImage = "/favicon.svg",
+    ogType = "website",
+    structuredData
+} = Astro.props;
+
+const fullTitle = `${pageTitle} | Mathéo Picouleau - Développeur Web`;
+const url = Astro.url.href;
+const siteUrl = "https://matheo-picouleau.fr";
+const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
+
+// Données structurées par défaut (Person + WebSite)
+const defaultStructuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Person",
+            "@id": `${siteUrl}/#person`,
+            "name": "Mathéo Picouleau",
+            "url": siteUrl,
+            "image": {
+                "@type": "ImageObject",
+                "url": absoluteOgImage
+            },
+            "jobTitle": "Développeur Web Full-Stack",
+            "worksFor": {
+                "@type": "Organization",
+                "name": "Freelance"
+            },
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Strasbourg",
+                "addressCountry": "FR"
+            },
+            "knowsAbout": ["React", "TypeScript", "Node.js", "React Native", "NestJS", "TailwindCSS", "Prisma"],
+            "email": "contact@matheo-picouleau.fr",
+            "sameAs": [
+                "https://www.linkedin.com/in/mathéo-p-767812250",
+                "https://github.com/idasrah"
+            ]
+        },
+        {
+            "@type": "WebSite",
+            "@id": `${siteUrl}/#website`,
+            "url": siteUrl,
+            "name": "Mathéo Picouleau - Développeur Web",
+            "description": "Portfolio de Mathéo Picouleau, développeur web full-stack freelance",
+            "inLanguage": "fr-FR",
+            "author": {
+                "@id": `${siteUrl}/#person`
+            }
+        }
+    ]
+};
+
+const jsonLd = structuredData || defaultStructuredData;
 ---
 
 <html lang="fr">
 <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
-    <title>Mathéo Picouleau | {pageTitle}</title>
+    <meta name="theme-color" content="#000000" />
+
+    <!-- SEO de base -->
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Mathéo Picouleau" />
+    <meta name="geo.region" content="FR-67" />
+    <meta name="geo.placename" content="Strasbourg" />
+    <link rel="canonical" href={url} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={url} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={absoluteOgImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Mathéo Picouleau - Développeur Web" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={url} />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={absoluteOgImage} />
+    <meta name="twitter:creator" content="@matheopicouleau" />
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 </head>
 <body>
 <main class="transition-fade">

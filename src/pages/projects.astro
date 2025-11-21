@@ -5,19 +5,33 @@ import { getCollection } from "astro:content";
 import PortfolioLayout from "../layouts/PortfolioLayout.astro";
 
 let projects = await getCollection("projects");
-projects.filter(project => !project.data.disabled);
+projects = projects.filter(project => !project.data.disabled);
 projects.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 
 const pageTitle = "Projets";
+const description = "Découvrez mes projets de développement web : applications React, sites web modernes, applications mobiles React Native et plus encore. Portfolio de réalisations concrètes.";
+const keywords = "projets développement web, portfolio react, applications typescript, projets freelance, réalisations web";
+
+// Données structurées pour les projets
+const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Projets - Mathéo Picouleau",
+    "description": description,
+    "creator": {
+        "@type": "Person",
+        "name": "Mathéo Picouleau"
+    }
+};
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} description={description} keywords={keywords} structuredData={structuredData}>
     <PortfolioLayout>
-        <div class="projectsList">
+        <section class="projectsList" aria-label="Liste des projets">
             {projects.map(project => (
                     <Project projectData={project.data} />
             ))}
-        </div>
+        </section>
     </PortfolioLayout>
 </BaseLayout>
 

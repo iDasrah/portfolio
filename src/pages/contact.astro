@@ -14,21 +14,36 @@ const contactLinks = [
 ]
 
 const pageTitle = "Contact";
+const description = "Contactez Mathéo Picouleau pour vos projets de développement web. Disponible en freelance à Strasbourg pour créer votre site web ou application.";
+const keywords = "contact développeur web, freelance strasbourg, devis site web, contact mathéo picouleau, développeur web disponible";
+
+const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "mainEntity": {
+        "@type": "Person",
+        "name": "Mathéo Picouleau",
+        "email": "contact@matheo-picouleau.fr",
+        "url": "https://matheo-picouleau.fr",
+        "sameAs": contactLinks.map(link => link.url)
+    }
+};
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} description={description} keywords={keywords} structuredData={structuredData}>
     <PortfolioLayout contentStyles={{justifyContent: "flex-start"}}>
-        <div class="contact">
+        <section class="contact">
+            <h1>Travaillons ensemble</h1>
             <p>On pourrait peut-être travailler ensemble. Contactez-moi !</p>
-            <a class="mail" href="mailto:contact@matheo-picouleau.fr">contact@matheo-picouleau.fr</a>
-            <div class="contactLinks">
+            <a class="mail" href="mailto:contact@matheo-picouleau.fr" aria-label="Envoyer un email à Mathéo Picouleau">contact@matheo-picouleau.fr</a>
+            <nav class="contactLinks" aria-label="Réseaux sociaux">
                 {
                     contactLinks.map((link) => (
-                            <a href={link.url}>{link.title}</a>
+                            <a href={link.url} target="_blank" rel="noopener noreferrer" aria-label={`Visiter mon profil ${link.title}`}>{link.title}</a>
                     ))
                 }
-            </div>
-        </div>
+            </nav>
+        </section>
     </PortfolioLayout>
 </BaseLayout>
 
@@ -38,6 +53,11 @@ const pageTitle = "Contact";
         display: flex;
         flex-direction: column;
         gap: 2rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0;
     }
 
     a {

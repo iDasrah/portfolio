@@ -7,29 +7,49 @@ const skills = {
     tech: ["React", "React Native", "TanStack Router", "NestJS", "Expo", "TailwindCSS", "Prisma"],
 }
 
-const pageTitle = "À propos de moi"
+const pageTitle = "À propos de moi";
+const description = "Développeur web full-stack et étudiant en informatique à Strasbourg. Passionné de programmation depuis 11 ans. Compétences en React, TypeScript, Node.js, développement mobile et plus.";
+const keywords = "mathéo picouleau, développeur full-stack, compétences react, typescript expert, nestjs, react native, étudiant informatique strasbourg";
+
+const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "mainEntity": {
+        "@type": "Person",
+        "name": "Mathéo Picouleau",
+        "jobTitle": "Développeur Web Full-Stack",
+        "knowsAbout": [...skills.languages, ...skills.tech],
+        "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "Université de Strasbourg"
+        },
+        "description": "Développeur web full-stack passionné de programmation depuis 11 ans, spécialisé en React et TypeScript"
+    }
+};
 ---
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} description={description} keywords={keywords} structuredData={structuredData}>
     <PortfolioLayout contentStyles={{justifyContent: "flex-start"}}>
-        <p>
-            Je suis Mathéo, développeur web full-stack et étudiant en informatique à Strasbourg.<br />
-            Depuis mes 11 ans, la programmation est ma passion. J'aime transformer des idées en applications concrètes et résoudre des problèmes techniques complexes.<br />
-            Spécialisé en développement web moderne avec React et TypeScript, je m'intéresse également à la programmation graphique, au développement mobile et à la création de jeux vidéo.<br />
-            Actuellement disponible pour des missions freelance.
-        </p>
-        <div>
-            <h2>Compétences techniques</h2>
-            <div class="skillsList">
-                <div>
-                    <h4>Langages</h4>
-                    { skills.languages.join(', ') }
+        <article>
+            <p>
+                Je suis Mathéo, développeur web full-stack et étudiant en informatique à Strasbourg.<br />
+                Depuis mes 11 ans, la programmation est ma passion. J'aime transformer des idées en applications concrètes et résoudre des problèmes techniques complexes.<br />
+                Spécialisé en développement web moderne avec React et TypeScript, je m'intéresse également à la programmation graphique, au développement mobile et à la création de jeux vidéo.<br />
+                Actuellement disponible pour des missions freelance.
+            </p>
+            <section>
+                <h2>Compétences techniques</h2>
+                <div class="skillsList">
+                    <div>
+                        <h3>Langages</h3>
+                        { skills.languages.join(', ') }
+                    </div>
+                    <div>
+                        <h3>Technologies</h3>
+                        { skills.tech.join(', ') }
+                    </div>
                 </div>
-                <div>
-                    <h4>Technologies</h4>
-                    { skills.tech.join(', ') }
-                </div>
-            </div>
-        </div>
+            </section>
+        </article>
     </PortfolioLayout>
 </BaseLayout>
 
@@ -52,6 +72,11 @@ const pageTitle = "À propos de moi"
 
     h2 {
         margin-bottom: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+        font-weight: 600;
     }
 
     @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
